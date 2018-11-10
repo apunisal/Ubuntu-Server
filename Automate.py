@@ -1,10 +1,11 @@
 import os
+import sys
 
 #Take Username from user
 print("-----WELCOME-------")
 
 #Username and Password are same.
-username = raw_input("Enter the Username : ")
+username = sys.argv[1]
 print("Please note that username and password will be same.")
 
 #Enter into Vagrant Folder
@@ -20,6 +21,7 @@ returned_value = os.system(ansi)
 #Results of ansible
 print('returned value:', returned_value)
 
+#///////////////////////////////////////////////////////////////Optional Content/////////////////////////////////////////
 #Choose you Servers where you want to work.
 print("Please Choose any one Server from 1 to 5")
 ch = raw_input("Server no : ")
@@ -35,3 +37,4 @@ elif ch=="5":
     os.system("ssh "+ username +"@server5.example.com")
 else:
     print("Enter Valid Number")
+#/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
