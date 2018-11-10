@@ -113,7 +113,13 @@ https://ngrok.com/download
      
 - Log In From webrowser to Central Machine
 - Run Script "Automate.py" Enter User Which You want To create User of Your choice
-
      
+     #python Automate.py Username
+     
+     (Automate.py outputs list IPs of servers)
+     
+- Now you username can enter in any server by  : 
+   
+    #ssh username@IP     
   
   
