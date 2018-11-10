@@ -1,5 +1,5 @@
-import os
-import sys
+import os # To use Linux Commands in Python
+import sys # To take command line input
 
 #Take Username from user
 print("-----WELCOME-------")
@@ -19,22 +19,15 @@ ansi = "ansible servers -a 'useradd "+username+" -shell /bin/bash -p "+username+
 returned_value = os.system(ansi) 
 
 #Results of ansible
-print('returned value:', returned_value)
+print("returned value:" + returned_value +" ")
 
 #///////////////////////////////////////////////////////////////Optional Content/////////////////////////////////////////
 #Choose you Servers where you want to work.
-print("Please Choose any one Server from 1 to 5")
-ch = raw_input("Server no : ")
-if ch=="1" : 
-    os.system("ssh "+ username +"@server1.example.com")
-elif ch=="2":
-    os.system("ssh "+ username +"@server2.example.com")
-elif ch=="3":
-    os.system("ssh "+ username +"@server3.example.com")
-elif ch=="4":
-    os.system("ssh "+ username +"@server4.example.com")
-elif ch=="5":
-    os.system("ssh "+ username +"@server5.example.com")
-else:
-    print("Enter Valid Number")
+print("Please Choose you SERVER")
+print("Use Command : #ssh username@ip")
+print("Eg : tom@192.168.2.5")
+serverList = os.system(tail -n 5 /etc/ansible/hosts)
+print(serverList)
+
+print()
 #/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
