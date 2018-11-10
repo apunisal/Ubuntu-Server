@@ -71,6 +71,7 @@ Now all the Machines are accesible with base machine(ip: 192.168.2.3)
 - Change ip of all 5 systems using command eg : 
     
     #ifconfig eth0 192.168.2.5 netmask 255.255.255.0 
+    
     192.168.2.5 for server1, 192.168.2.6 for server2 and So on..
 
 # Step 3) Ansible Setup on Central Machine 
