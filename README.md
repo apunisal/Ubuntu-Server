@@ -4,11 +4,11 @@
 
 Tools We Need: 
 
-1-Virtual Box
-2-Vagrant
-3-Ansible
-4-Wetty
-5-Ngrok
+1) Virtual Box
+2) Vagrant   
+3) Ansible
+4) Wetty
+5) Ngrok
 
 Step 1) Vagrant Setup
 Create a directory for Vagrant
@@ -46,20 +46,42 @@ Now all the Machines are accesible with base machine(ip: 192.168.2.3)
 - Use #sudo -i to login to root set password to root
 - Uncomment below lines from /etc/ssh/sshd_conf
 
-HostKey /etc/ssh/ssh_host_rsa_key
-HostKey /etc/ssh/ssh_host_ecdsa_key
-HostKey /etc/ssh/ssh_host_ed25519_key
-
-PermitRootLogin yes
-AuthorizedKeysFile      .ssh/authorized_keys
-PasswordAuthentication yes
+1. HostKey /etc/ssh/ssh_host_rsa_key
+2. HostKey /etc/ssh/ssh_host_ecdsa_key
+3. HostKey /etc/ssh/ssh_host_ed25519_key
+4. PermitRootLogin yes
+5. AuthorizedKeysFile      .ssh/authorized_keys
+6. PasswordAuthentication yes
 
 - Restart Service : #service ssh restart
 - Provide keygen of Central Machine to all servers  
-- Chnage ip of all 5 systems using command
-#ifconfig eth0 192.168.2.5 netmask 255.255.255.0 ----------for server1
-#ifconfig eth0 192.168.2.6 netmask 255.255.255.0 ----------for server2
-#ifconfig eth0 192.168.2.7 netmask 255.255.255.0 ----------for server3
-#ifconfig eth0 192.168.2.8 netmask 255.255.255.0 ----------for server4
-#ifconfig eth0 192.168.2.9 netmask 255.255.255.0 ----------for server5
+- Change ip of all 5 systems using command eg : 
+    
+    #ifconfig eth0 192.168.2.5 netmask 255.255.255.0 
+    192.168.2.5 for server1, 192.168.2.6 for server2 and So on..
 
+3) Ansible Setup on Central Machine 
+- Install Ansible Using :   
+     #yum install ansilble
+- Adding Server entry in ansible/hosts
+  #cat >> /etc/ansile/hosts
+  [servers]
+  root@192.168.2.5
+  root@192.168.2.6
+  root@192.168.2.7
+  root@192.168.2.8
+  root@192.168.2.9
+
+4) wetty
+
+https://www.tecmint.com/access-linux-server-terminal-in-web-browser-using-wetty/
+
+5) Ngrok 
+
+https://ngrok.com/download
+
+
+
+
+  
+  
