@@ -91,12 +91,12 @@ Now all the Machines are accesible with base machine(ip: 192.168.2.3)
 
 https://www.tecmint.com/access-linux-server-terminal-in-web-browser-using-wetty/
 
-Step 5) Ngrok 
+# Step 5) Ngrok 
 
 https://ngrok.com/download
 (You can move ngrok in /usr/bin to use it as command)
 
-# 6) From Central Machine
+# Step 6) From Central Machine
 
 - To run Terminal from Web browser 
 
