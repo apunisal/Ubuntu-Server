@@ -4,11 +4,11 @@
 
 Tools We Need: 
 
-Virtual Box
-Vagrant
-Ansible
-Wetty
-Ngrok
+1-Virtual Box
+2-Vagrant
+3-Ansible
+4-Wetty
+5-Ngrok
 
 Step 1) Vagrant Setup
 Create a directory for Vagrant
@@ -18,7 +18,7 @@ https://app.vagrantup.com/peru/boxes/ubuntu-18.04-server-amd64
 #vagrant init peru/boxes/ubuntu-18.04-server-amd64
 Add server detais in Vagrant File
 #vim Vagrantfile
-=======================================
+
 config.vm.define "server1" do |server1|
           server1.vm.hostname="server1"
   end
@@ -35,7 +35,7 @@ config.vm.define "server5" do |server5|
           server5.vm.hostname="server5"
   end
 end  
- ======================================
+
 #vagrant up
 
 Step 2) Virtual Box settings to bring all systems in one network
@@ -45,7 +45,7 @@ Now all the Machines are accesible with base machine(ip: 192.168.2.3)
 - Login to each system Usename : Vagrant Password : Vagrant
 - Use #sudo -i to login to root set password to root
 - Uncomment below lines from /etc/ssh/sshd_conf
-=======================================================
+
 HostKey /etc/ssh/ssh_host_rsa_key
 HostKey /etc/ssh/ssh_host_ecdsa_key
 HostKey /etc/ssh/ssh_host_ed25519_key
@@ -53,7 +53,7 @@ HostKey /etc/ssh/ssh_host_ed25519_key
 PermitRootLogin yes
 AuthorizedKeysFile      .ssh/authorized_keys
 PasswordAuthentication yes
-========================================================
+
 - Restart Service : #service ssh restart
 - Provide keygen of Central Machine to all servers  
 - Chnage ip of all 5 systems using command
