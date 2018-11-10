@@ -54,7 +54,7 @@ end
 
 Goto Settings for every server
 Change Network Setting from NAT to Bridge Adapter,Name: wlp19s0
-Now all the Machines are accesible with base machine(ip: 192.168.2.3)
+Now all the Machines are accesible with central machine(eg : ip= 192.168.2.3)
 - Login to each system Usename : Vagrant Password : Vagrant
 - Use # sudo -i to login to root set password to root
 - Uncomment below lines from /etc/ssh/sshd_conf
