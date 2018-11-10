@@ -1,0 +1,65 @@
+# Ubuntu-Server
+
+# Set-ups
+
+Tools We Need: 
+
+Virtual Box
+Vagrant
+Ansible
+Wetty
+Ngrok
+
+Step 1) Vagrant Setup
+Create a directory for Vagrant
+#mkdir Ubuntu 18.04.1-Server
+Copy Name from : 
+https://app.vagrantup.com/peru/boxes/ubuntu-18.04-server-amd64
+#vagrant init peru/boxes/ubuntu-18.04-server-amd64
+Add server detais in Vagrant File
+#vim Vagrantfile
+=======================================
+config.vm.define "server1" do |server1|
+          server1.vm.hostname="server1"
+  end
+config.vm.define "server2" do |server2|
+          server2.vm.hostname="server2"
+  end
+config.vm.define "server3" do |server3|
+          server3.vm.hostname="server3"
+  end
+config.vm.define "server4" do |server4|
+          server4.vm.hostname="server4"
+  end
+config.vm.define "server5" do |server5|
+          server5.vm.hostname="server5"
+  end
+end  
+ ======================================
+#vagrant up
+
+Step 2) Virtual Box settings to bring all systems in one network
+Goto Settings for every server
+Change Network Setting from NAT to Bridge Adapter,Name: wlp19s0
+Now all the Machines are accesible with base machine(ip: 192.168.2.3)
+- Login to each system Usename : Vagrant Password : Vagrant
+- Use #sudo -i to login to root set password to root
+- Uncomment below lines from /etc/ssh/sshd_conf
+=======================================================
+HostKey /etc/ssh/ssh_host_rsa_key
+HostKey /etc/ssh/ssh_host_ecdsa_key
+HostKey /etc/ssh/ssh_host_ed25519_key
+
+PermitRootLogin yes
+AuthorizedKeysFile      .ssh/authorized_keys
+PasswordAuthentication yes
+========================================================
+- Restart Service : #service ssh restart
+- Provide keygen of Central Machine to all servers  
+- Chnage ip of all 5 systems using command
+#ifconfig eth0 192.168.2.5 netmask 255.255.255.0 ----------for server1
+#ifconfig eth0 192.168.2.6 netmask 255.255.255.0 ----------for server2
+#ifconfig eth0 192.168.2.7 netmask 255.255.255.0 ----------for server3
+#ifconfig eth0 192.168.2.8 netmask 255.255.255.0 ----------for server4
+#ifconfig eth0 192.168.2.9 netmask 255.255.255.0 ----------for server5
+
