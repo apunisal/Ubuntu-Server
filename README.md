@@ -102,7 +102,9 @@ https://ngrok.com/download
 - To run Terminal from Web browser 
 
      #cd wetty
+     
      #node app.js -p 8080
+     
      #firefox https://localhost:8080     
      
 - For Remote Access
