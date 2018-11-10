@@ -12,25 +12,34 @@ Tools We Need:
 
 Step 1) Vagrant Setup
 Create a directory for Vagrant
+
 #mkdir Ubuntu 18.04.1-Server
+
 Copy Name from : 
 https://app.vagrantup.com/peru/boxes/ubuntu-18.04-server-amd64
+
 #vagrant init peru/boxes/ubuntu-18.04-server-amd64
+
 Add server detais in Vagrant File
+
 #vim Vagrantfile
 
 config.vm.define "server1" do |server1|
           server1.vm.hostname="server1"
-  end
+end
+
 config.vm.define "server2" do |server2|
           server2.vm.hostname="server2"
   end
+
 config.vm.define "server3" do |server3|
           server3.vm.hostname="server3"
   end
+
 config.vm.define "server4" do |server4|
           server4.vm.hostname="server4"
   end
+
 config.vm.define "server5" do |server5|
           server5.vm.hostname="server5"
   end
@@ -64,7 +73,9 @@ Now all the Machines are accesible with base machine(ip: 192.168.2.3)
 - Install Ansible Using :   
      #yum install ansilble
 - Adding Server entry in ansible/hosts
+ 
   #cat >> /etc/ansile/hosts
+ 
   [servers]
   root@192.168.2.5
   root@192.168.2.6
